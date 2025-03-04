@@ -8,6 +8,7 @@ import { AuthService } from "./_services/auth.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'angular-auth-frontend';
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
