@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, BehaviorSubject } from "rxjs";
+import { StorageService } from './storage.service';
 
 const AUTH_API = 'http://localhost:8080/api/auth/';
 
@@ -13,7 +14,14 @@ const httpOptions = {
 })
 export class AuthService {
 
+  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+  isLoggedIn$ = this.isLoggedInSubject.asObservable();
+
   constructor(private http: HttpClient) { }
+
+  setLoggedIn(value: boolean): void {
+    this.isLoggedInSubject.next(value);
+  }
 
   login(username: string, password: string): Observable<any> {
     return this.http.post(
