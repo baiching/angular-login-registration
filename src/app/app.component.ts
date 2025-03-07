@@ -43,19 +43,9 @@ export class AppComponent {
   }
 
   logout(): void {
-    this.authService.logout().subscribe({
-      next: res => {
-        this.storageService.clean();
-        this.authService.setLoggedIn(false);
-        this.router.navigate(['/login']);
-        window.location.reload();
-      },
-      error: err => {
-        console.log(err);
-      }
-    });
-
-
-
+    this.storageService.clean();
+    this.authService.setLoggedIn(false);
+    this.router.navigate(['/login']);
+    window.location.reload();
   }
 }
