@@ -17,7 +17,7 @@ This is a full-stack web application built with Angular 16 and [Spring Boot](htt
 ### Backend
 - **Framework**: Spring Boot
 - **Authentication**: Spring Security with JWT
-- **Database**: MySQL/PostgreSQL (Specify if applicable)
+- **Database**: PostgreSQL
 - **ORM**: Hibernate/JPA
 
 ## Installation & Setup
