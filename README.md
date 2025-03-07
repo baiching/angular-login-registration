@@ -1,27 +1,63 @@
-# AngularAuthFrontend
+# Web Application: User Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Overview
+This is a full-stack web application built with Angular 16 and [Spring Boot](https://github.com/baiching/Login-Registration-Spring-Security). It provides user authentication, registration, and role-based access control for different types of users: **User, Admin, and Moderator**.
 
-## Development server
+## Features
+- **User Authentication**: Secure login and registration system.
+- **Role-Based Access Control**: Users are assigned different roles with access to specific functionalities.
+- **Admin Dashboard**: Manage users and their roles.
+- **Moderator Privileges**: Limited administrative functionalities.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
+### Frontend
+- **Framework**: Angular 16
+- **HTTP Client**: Angular HttpClient
 
-## Code scaffolding
+### Backend
+- **Framework**: Spring Boot
+- **Authentication**: Spring Security with JWT
+- **Database**: MySQL/PostgreSQL (Specify if applicable)
+- **ORM**: Hibernate/JPA
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation & Setup
+### Prerequisites
+- Node.js & npm installed
+- Java 17+ installed
+- PostgreSQL
+- Maven
 
-## Build
+### Backend Setup
+Look at this repo for [backend](https://github.com/baiching/Login-Registration-Spring-Security) setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Frontend Setup
+1. Navigate to the frontend folder:
+   ```sh
+   cd angular-auth-frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Run the Angular application:
+   ```sh
+   ng serve
+   ```
 
-## Running unit tests
+### API Endpoints
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Authenticate user and return JWT
+- `GET /api/users` - Get all users (Admin only)
+- `GET /api/moderator` - Moderator-specific endpoint
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
+- Users can sign up and log in using their credentials.
+- Admins can manage users and assign roles.
+- Moderators have limited privileges.
 
-## Running end-to-end tests
+## Contribution
+Feel free to contribute by submitting issues or pull requests.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
